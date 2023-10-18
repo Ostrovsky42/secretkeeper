@@ -1,0 +1,17 @@
+
+server:
+  postgre:
+    host: "127.0.0.1"
+    port: 5433
+    user: "secretkeeper"
+    password: "secret"
+    database: "secret_keeper_server"
+
+client:
+  postgre:
+    host: "127.0.0.1"
+    port: 5433
+    user: "secretkeeper"
+    password: "secret"
+    database: "secret_keeper_client"
+
