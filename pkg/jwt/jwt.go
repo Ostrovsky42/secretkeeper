@@ -15,19 +15,21 @@ type Service struct {
 	log     zerolog.Logger
 }
 
-func NewService(privKeyPEM string, log zerolog.Logger) Service {
+func NewService(privKeyPEM string, log zerolog.Logger) *Service {
 	privKey, err := jwt.ParseECPrivateKeyFromPEM([]byte(privKeyPEM))
 	if err != nil {
 		log.Err(err).Msg("Error parsing private key")
-		//	return
+
+		return nil
 	}
 
-	return Service{
+	return &Service{
 		privKey: privKey,
 		log:     log,
 	}
 }
 
+//nolint:errcheck
 func (s *Service) New(userID string) string {
 	token := jwt.New(jwt.SigningMethodES256)
 

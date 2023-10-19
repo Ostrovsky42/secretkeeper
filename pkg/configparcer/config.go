@@ -1,9 +1,10 @@
 package configparcer
 
 import (
-	"gopkg.in/yaml.v3"
 	"io/ioutil"
 	"path/filepath"
+
+	"gopkg.in/yaml.v3"
 )
 
 func GetConfig(filePath string, cfg any) {

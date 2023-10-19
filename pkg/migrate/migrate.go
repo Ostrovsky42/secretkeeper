@@ -4,8 +4,7 @@ import (
 	"database/sql"
 	"fmt"
 
-	// pg driver
-	_ "github.com/lib/pq"
+	_ "github.com/lib/pq" // pg driver
 	"github.com/pressly/goose/v3"
 )
 
