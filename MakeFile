@@ -1,0 +1,19 @@
+
+
+ci:
+	golangci-lint run -v -c golangci.yaml
+
+migrate/server/create:
+	go run ./cmd/migrate/server/main.go -c create  #-f $(name)
+
+migrate/client/create:
+	go run ./cmd/migrate/client/main.go -c create  #-f $(name)
+
+migrate/client/up:
+	go run ./cmd/migrate/client/main.go -c up
+
+migrate/server/up:
+	go run ./cmd/migrate/server/main.go -c up
+
+migrate/server/reset:
+	go run ./cmd/migrate/server/main.go -c reset
